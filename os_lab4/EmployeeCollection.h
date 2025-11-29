@@ -6,6 +6,7 @@
 class EmployeeCollection
 {
 public:
+    // Визначення типів (для сумісності з STL)
     using container_type = std::vector<Employee>;
     using iterator = container_type::iterator;
     using const_iterator = container_type::const_iterator;
@@ -16,41 +17,19 @@ private:
 public:
     EmployeeCollection() = default;
 
-    // Додавання елемента
-    void Add(const Employee& e)
-    {
-        data.push_back(e);
-    }
+    // Методи керування
+    void Add(const Employee& e);
+    std::size_t Size() const;
+    bool Empty() const;
 
-    std::size_t Size() const
-    {
-        return data.size();
-    }
+    // Ітератори (реалізація п.7)
+    iterator begin();
+    iterator end();
+    const_iterator begin() const;
+    const_iterator end() const;
+    const_iterator cbegin() const;
+    const_iterator cend() const;
 
-    bool Empty() const
-    {
-        return data.empty();
-    }
-
-    // Ітератори (вимога "реалізація ітератора")
-    iterator begin() { return data.begin(); }
-    iterator end() { return data.end(); }
-    const_iterator begin() const { return data.begin(); }
-    const_iterator end()   const { return data.end(); }
-    const_iterator cbegin() const { return data.cbegin(); }
-    const_iterator cend()   const { return data.cend(); }
-
-    // === Пошук за варіантом №5: імена службовців заданої професії ===
-    std::vector<const Employee*> FindByProfession(const std::string& prof) const
-    {
-        std::vector<const Employee*> res;
-
-        for (const auto& e : data)
-        {
-            if (e.Profession() == prof)
-                res.push_back(&e);
-        }
-
-        return res;
-    }
+    // Пошук за варіантом №5
+    std::vector<const Employee*> FindByProfession(const std::string& prof) const;
 };
