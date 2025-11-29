@@ -9,20 +9,16 @@ private:
     std::string profession;
 
 public:
-    Employee() = default;
 
-    Employee(const std::string& name,
-        const std::string& profession)
-        : name(name), profession(profession)
-    {
-    }
+    Employee();
 
-    const std::string& Name() const { return name; }
-    const std::string& Profession() const { return profession; }
 
-    void Show(std::ostream& out = std::cout) const
-    {
-        out << "Ім'я: " << name
-            << ", професія: " << profession;
-    }
+    Employee(const std::string& name, const std::string& profession);
+
+
+    const std::string& Name() const;
+    const std::string& Profession() const;
+
+    // Метод виводу
+    void Show(std::ostream& out = std::cout) const;
 };
