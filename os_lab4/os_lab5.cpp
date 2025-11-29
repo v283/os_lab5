@@ -26,7 +26,7 @@ int main()
     cout << "\x1B[2J\x1B[H";
     cout << "Ëàáîğàòîğíà ğîáîòà 5 — Âàğ³àíò 5\n\n";
 
-    //  1. Óñïàäêóâàííÿ (ËĞ4) 
+    //  1. Óñïàäêóâàííÿ ( ç ËĞ4) 
 
     InsuranceCompany sk1("ÑÊ «Avocado»", 120, 5'500'000.0, 25'000, true);
     Factory z1("Çàâîä «Ïğîãğåñ»", 340, 12'300'000.0, "Ìàøèíîáóäóâàííÿ", 8, true);
@@ -61,7 +61,7 @@ int main()
         cout << endl;
     }
 
-    //  3. Ïîøóê (âàğ³àíò ¹5) 
+    //  3. Ïîøóê 
 
     std::string target = "²íæåíåğ";
     auto found = employees.FindByProfession(target);
